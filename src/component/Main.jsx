@@ -147,7 +147,7 @@ const Main = () => {
             <h6 className="text-[20px] font-semibold pb-[20px] text-[#181A53]">
               Instructor's notes
             </h6>
-            <div className="border border-[#E2E2E2] rounded-xl shadow-card bg-white h-full px-[40px] pt-[18px]">
+            <div className="border border-[#E2E2E2] rounded-xl shadow-card bg-white h-full px-[40px] pt-[18px] pb-4">
             
               <ul className="flex items-center gap-[27.4px] border-b-2 border-[#E2E2E2]">
                 {["Day 1", "Day 2", "Day 3"].map((day) => (

@@ -70,7 +70,7 @@ const SideBar = () => {
 
             <li className="cursor-pointer relative flex flex-col items-start gap-2.5 my-0.5 rounded-lg transition duration-300 group">
               <div
-                className={`flex w-full justify-between items-center gap-2.5 cursor-pointer py-2.5 px-3 rounded-lg transition duration-300 ${
+                className={`flex w-full justify-between items-center  cursor-pointer py-2.5 px-3 rounded-lg transition duration-300 ${
                   isSubmenuOpen ? "bg-[#0876F8]" : "hover:bg-[#0876F8]"
                 }`}
                 onClick={() => setIsSubmenuOpen(!isSubmenuOpen)}
@@ -88,11 +88,13 @@ const SideBar = () => {
                   )}
                 </div>
                 <div>
-                  <i class="bx bx-chevron-down text-[24px] text-[#585858] group-hover:text-white transition duration-300"></i>
+                  {!slideMenu && (
+                    <i class="bx bx-chevron-down text-[24px] text-[#585858] group-hover:text-white transition duration-300"></i>
+                  )}
                 </div>
               </div>
 
-              {isSubmenuOpen && (
+              {!slideMenu && isSubmenuOpen && (
                 <ul className="ml-6 space-y-2">
                   <li className="text-[#585858] hover:bg-[#0876F8] hover:text-white px-3 py-1 rounded-lg cursor-pointer transition duration-300">
                     Sub-menu 1
@@ -126,7 +128,11 @@ const SideBar = () => {
           <div className="relative">
             <hr className="pb-6 mt-6" />
             <i
-              class={`bx ${slideMenu ? "bx-right-arrow-circle" : "bx-left-arrow-circle"} absolute right-2 text-[#585858] -top-[11px] text-[24px] cursor-pointer`}
+              className={`bx ${
+                slideMenu ? "bx-right-arrow-circle" : "bx-left-arrow-circle"
+              } 
+                  absolute right-2 text-[#585858] -top-[11px] text-[24px] cursor-pointer 
+                  transition-transform duration-300 ease-in-out `}
               onClick={collapseMenu}
             ></i>
           </div>
